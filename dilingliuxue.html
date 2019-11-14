@@ -130,7 +130,7 @@
       </div>
     </div>
     <div class="w72 pad30">
-      <div class="swiper-container item-list-activity dl-list">
+      <div class="swiper-container item-list-activity1 dl-list">
         <div class="swiper-wrapper" id="activity">
         </div>
       </div>
@@ -197,7 +197,7 @@
           var act_view = document.getElementById('activity');
           laytpl(act_tpl).render(activity, function (html) {
             act_view.innerHTML = html;
-            var swiper = new Swiper('.item-list-activity', {
+            var swiper = new Swiper('.dl-list', {
               slidesPerView: 4,
               slidesPerColumn: 2,
               spaceBetween: 15,
