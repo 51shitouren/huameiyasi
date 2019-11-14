@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="css/phone.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/main.js"></script>
+  <title>华美雅思</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+  </header>
+  <!--end  header -->
+
+  <!--star banner -->
+  <div class="ny-banner positionr">
+    <img src="images/banner-gdlx.jpg" alt="" srcset="" class="w100">
+    <div class="positionb flex flex-center">
+      <div>
+        <p class="banner-line"></p>
+        <h2 class="banner-h2 fon32">美国高端留学</h2>
+        <p class="banner-txt fon18">每一份成功都是我们的动力</p>
+      </div>
+    </div>
+  </div>
+  <!--end  banner -->
+
+  <!--star 高端留学 -->
+  <div class="padding60 bgf5">
+    <div class="max1200 flex just-between gd-lx-flex">
+      <div class="w40 flex al-center">
+        <div>
+          <p class="fon24 colororg">
+            华美留学美国名校A+高端留学项目
+          </p>
+          <div class="gd-con lineh18">
+            美国名校A+高端留学项目<br>
+            为华美留学旗下高端美国留学产品<br>
+            针对高中生和大学本科毕业生提供美国名校本科和研究生的申请服务。<br>
+            A+ 本科高端计划（爬藤计划）旨在为7-11年级（不包含11年级下学期）<br>
+            在读学生定制个性化升学规划方案，帮助学生进入美国Top50大学。<br>
+            A+高端研究生项目，面向符合申请要求的大学本科毕业生<br>
+            申请美国Top50的研究生院校。<br>
+          </div>
+        </div>
+      </div>
+      <div class="w43 flex al-center">
+        <div>
+          <img src="images/gd-liuxue.png" alt="" srcset="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end 高端留学 -->
+
+  <!--star 核心理念 -->
+  <div class="hexin-linian padding60">
+    <div class="max1200">
+      <div class="colorf text-center">
+        <p class="fon24">核心理念</p>
+        <p class="fon18 uppercase"> Core Concepts</p>
+      </div>
+      <!--star list -->
+      <div class="swiper-container item-list-activity ">
+        <div class="swiper-wrapper list-lx" id="activity">
+
+        </div>
+        <div class="swiper-pagination-active"></div>
+      </div>
+      <script type="text/html" id="activity_list_tpl">
+          {{#  layui.each(d.list, function(index, item){ }}
+          <div class="swiper-slide bgf ">
+              <div class="list-img positionr">
+                <img src="images/hexin-img-bg.jpg" alt="" srcset="" class="w100">
+                <div class="positionb">
+                  <img src="{{item.img}}" alt="" srcset="" class="w100">
+                </div>
+              </div>
+              <div class=" bgf liuxue-box w100">
+                <p class=" fon18 title nowarp"  style='background:url({{item.icon}}) no-repeat left center ; padding-left:25px'>
+                  {{item.title}}
+                </p>
+                <p class="line3 desc fon14 color9">{{item.desc}}</p>
+              </div>
+            </div>
+            {{#  }); }}
+        </script>
+      <script>
+        layui.use('laytpl', function () {
+          var laytpl = layui.laytpl;
+          var activity = {
+            "list": [
+              {
+                "id": "02",
+                "title": "最强阵容世界名校团！ 2018华美国际教育展盛大揭幕",
+                "desc": "认真分析每个学生的个性特点，定制最优的个性化申请方案。规划Planning：通过针对性规划与陪伴，帮助学生提升自我素质获得优质录取，创造灿烂留学人生！",
+                "img": "images/hexin-img.jpg",
+                "icon": "images/gx-icon1.png"
+              }, {
+                "id": "02",
+                "title": "最强阵容世界名校团！ 2018华美国际教育展盛大揭幕",
+                "desc": "数百所顶尖名校大学招生官莅临羊城华美国际中学邀请多伦多大学、加州大学欧文分校等...",
+                "img": "images/hexin-img.jpg",
+                "icon": "images/gd-icon2.png"
+              }, {
+                "id": "02",
+                "title": "最强阵容世界名校团！ 2018华美国际教育展盛大揭幕",
+                "desc": "加州大学欧文分校等...",
+                "img": "images/hexin-img.jpg",
+                "icon": "images/gd-icon3.png"
+              }, {
+                "id": "02",
+                "title": "最强阵容世界名校团！ 2018华美国际教育展盛大揭幕",
+                "desc": "数百所顶尖名校大学招生官莅临羊城华美国际中学邀请多伦多大学、加州大学欧文分校等...",
+                "img": "images/hexin-img.jpg",
+                "icon": "images/gd-icon4.png"
+              }
+            ]
+          }
+          var act_tpl = activity_list_tpl.innerHTML;
+          var act_view = document.getElementById('activity');
+          laytpl(act_tpl).render(activity, function (html) {
+            act_view.innerHTML = html;
+
+          });
+
+        })
+
+      </script>
+      <!--end list -->
+    </div>
+  </div>
+  <!--end 核心理念 -->
+
+  <!--star 部分专家团队 -->
+  <div class="padding60 bgf5">
+    <div class="max1200">
+      <div class="text-center">
+        <p class="fon24"> A+”项目部分专家团队</p>
+        <p class="fon18 uppercase"> A+ Program Team</p>
+      </div>
+      <br>
+      <div class="flex gd-team">
+        <div class="w7-5">
+          <ul class="team-small-list">
+            <li class="positionr" data-largeImg="images/about-4-img.jpg" data-name="Robert"
+              data-desc="1A+团队外方高级顾问，加州大学洛杉矶分校招生办公室副主任。">
+              <img src="images/about-4-img-bg.jpg" alt="" srcset="" class="w100">
+              <div class="positionb">
+                <img src="images/about-4-img.jpg" alt="" srcset="" class="w100">
+              </div>
+            </li>
+            <li class="positionr" data-largeImg="images/about-4-img.jpg" data-name="Robert"
+              data-desc="111111A+团队外方高级顾问，加州大学洛杉矶分校招生办公室副主任。">
+              <img src="images/about-4-img-bg.jpg" alt="" srcset="" class="w100">
+              <div class="positionb">
+                <img src="images/about-4-img.jpg" alt="" srcset="" class="w100">
+              </div>
+            </li>
+            <li class="positionr" data-largeImg="images/about-4-img.jpg" data-name="Robert"
+              data-desc="333331A+团队外方高级顾问，加州大学洛杉矶分校招生办公室副主任。">
+              <img src="images/about-4-img-bg.jpg" alt="" srcset="" class="w100">
+              <div class="positionb">
+                <img src="images/about-4-img.jpg" alt="" srcset="" class="w100">
+              </div>
+            </li>
+            <li class="positionr" data-largeImg="images/about-4-img.jpg" data-name="Robert"
+              data-desc="13333335543A+团队外方高级顾问，加州大学洛杉矶分校招生办公室副主任。">
+              <img src="images/about-4-img-bg.jpg" alt="" srcset="" class="w100">
+              <div class="positionb">
+                <img src="images/about-4-img.jpg" alt="" srcset="" class="w100">
+              </div>
+            </li>
+
+          </ul>
+        </div>
+        <div class="w90 bgf flex">
+          <div class="w30 positionr">
+            <img src="images/about-4-img-bg.jpg" alt="" srcset="" class="w100 visible-hidden">
+            <div class="positionb flex flex-center">
+              <img src="images/about-4-img.jpg" alt="" srcset="" class="w100" id="team_img">
+            </div>
+          </div>
+          <div class="w70 flex  al-center positionr">
+            <div>
+              <p class="fon20 colororg" id="item_name">Robert</p>
+              <div id="team_desc">
+                <p> A+团队外方高级顾问，加州大学洛杉矶分校招生办公室副主任。<br>
+                  加州大学洛杉矶分校招生办主任及就业指导专家顾问，超过15年的升学指导经验，曾成功指导数百名学子顺利入读加州大学伯克利分校、加州大学洛杉矶分校、哈佛大学等名校。</p>
+                <p class="text-right qianming"><img src="images/robert.png" alt="" srcset=""></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script>
+    $(function () {
+      $('.team-small-list li ').hover(function () {
+        // over
+        var name = $(this).attr('data-name');
+        var desc = $(this).attr('data-desc');
+        var largeImg = $(this).attr('data-largeImg')
+        $('#team_img').attr('src',largeImg)
+        $('#item_name').text(name)
+        $('#team_desc').html(desc)
+
+      }, function () {
+        // out
+      }
+      );
+    })
+  </script>
+  <!--end 部分专家团队 -->
+
+  <!--star 四位一体 -->
+  <div class="padding60">
+    <div class="max1200">
+      <div class=" text-center">
+        <p class="fon24">四位一体”多维度服务</p>
+        <p class="fon18 uppercase"> Quaternity Application Services</p>
+        <br>
+      </div>
+      <div class="swyt  positionr">
+        <div class="text-center"><img src="images/swyt.png" alt="" srcset="" class="swyt-img"></div>
+        <div class="sw-item sw-item1 colorf ">
+          <div class="padding15 positionb flex al-center">
+            <div>
+              <p class="fon20">考培/Exam Training</p>
+              <p class="fon14">托福/雅思，SAT/ACT针对性培训<br>
+                线上课程班、线下课程班全方面覆盖</p>
+            </div>
+          </div>
+        </div>
+        <div class="sw-item sw-item2 colorf ">
+          <div class="padding15 positionb flex al-center">
+            <div>
+              <p class="fon20">考培/Exam Training</p>
+              <p class="fon14">托福/雅思，SAT/ACT针对性培训<br>
+                线上课程班、线下课程班全方面覆盖</p>
+            </div>
+          </div>
+        </div>
+        <div class="sw-item sw-item3 colorf ">
+          <div class="padding15 positionb flex al-center">
+            <div>
+              <p class="fon20">考培/Exam Training</p>
+              <p class="fon14">托福/雅思，SAT/ACT针对性培训<br>
+                线上课程班、线下课程班全方面覆盖</p>
+            </div>
+          </div>
+        </div>
+        <div class="sw-item sw-item4 colorf ">
+          <div class="padding15 positionb flex al-center">
+            <div>
+              <p class="fon20">考培/Exam Training</p>
+              <p class="fon14">托福/雅思，SAT/ACT针对性培训<br>
+                线上课程班、线下课程班全方面覆盖</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- end 四位一体 -->
+
+
+
+  <!--star 为什么参加 -->
+  <div class="why-a flex">
+    <div class="w40">
+      <img src="images/whya.jpg" alt="" srcset="" class="w100">
+    </div>
+    <div class="w60 flex al-center">
+      <div>
+        <p class="fon24">为什么参加A+申请项目Why Choose A+?</p>
+        <div>
+          <p>保障美国名校Top50，奠定成功留学的基础</p>
+          <p>&nbsp;</p>
+          <p> 让你录取提高10名</p>
+          <p>让A级成绩的你进入A+级排名的大学，让B级成绩的你，进入A级排名的大学</p>
+          <p>&nbsp;</p>
+          <p> 专业顾问团队全程陪伴指导</p>
+          <p>一对一跟踪服务（培训师，规划师，文书顾问，境外导师）</p>
+          <p>&nbsp;</p>
+          <p>外国导师团队联合中国导师发力</p>
+          <p>充分发挥各团队成员美国学校申请的经验优势</p>
+          <p>&nbsp;</p>
+          <p> 培训，留学，申请，海外监管，就业，移民一站式服务。选择华美，前程无忧！</p>
+          <p>&nbsp;</p>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end 为什么参加 -->
+
+  <!--star 项目流程 -->
+  <div class="item-lc padding60">
+    <div class="max1200">
+      <div class=" text-center phone-color ">
+        <p class="fon24">项目流程</p>
+        <p class="fon18 uppercase"> A+ procedure</p>
+        <div class="hidden-xs">
+          <p>&nbsp;&nbsp;</p>
+          <p>&nbsp;&nbsp;</p>
+          <p>&nbsp;&nbsp;</p>
+        </div>
+      </div>
+      <div class="text-center max660">
+        <p class="text-left yh-72"> “ </p>
+        <p class="fon20 colororg"> 华美留学咨询</p>
+        <p class="fon16"> 留学对学生、家庭来说，都是一项重要投资
+          所以行动越早占有先机。
+          无论是从学校信息的获取、奖学金申请，背景提升，夏校申请还是见证的准备时间等，
+          建议学生至少提前3年准备,并在准备期间与顾问老师不间断进行联系。
+          除了获得最新的申请信息。同时按照科学的申请规划准备，从自身的软硬件和心理上不断提升自己。</p>
+        <p class="text-right yh-72"> ” </p>
+      </div>
+      <div class="lx-items padding30 text-center">
+        <ul class="flex ">
+          <li class="flex flex-center circle">
+            <div class="">
+              <p class="w100 icon"><img src="images/lx-icon1.png" alt="" srcset=""></p>
+              <div class="w100">华美留学<br>
+                咨询</div>
+            </div>
+          </li>
+          <li class="flex flex-center  right">
+            <img src="images/lx-rights.png" alt="" srcset="">
+          </li>
+          <li class="flex flex-center circle">
+            <div class="">
+              <p class="w100 icon"><img src="images/lx-icon2.png" alt="" srcset=""></p>
+              <div class="w100">参加华美+<br>
+                项目组建专业<br>
+                申请团队</div>
+            </div>
+          </li>
+          <li class="flex flex-center right ">
+            <img src="images/lx-rights.png" alt="" srcset="">
+          </li>
+          <li class="flex flex-center circle">
+            <div class="">
+              <p class="w100 icon"><img src="images/lx-icon3.png" alt="" srcset=""></p>
+              <div class="w100">确定留学<br>
+                方向</div>
+            </div>
+          </li>
+          <li class="flex flex-center right">
+            <img src="images/lx-rights.png" alt="" srcset="">
+          </li>
+          <li class="flex flex-center circle">
+            <div class="">
+              <p class="w100 icon"><img src="images/lx-icon4.png" alt="" srcset=""></p>
+              <div class="w100">沟通申请<br>
+                学院&专业</div>
+            </div>
+          </li>
+          <li class="flex flex-center right">
+            <img src="images/lx-rights.png" alt="" srcset="">
+          </li>
+          <li class="flex flex-center circle">
+            <div class="">
+              <p class="w100 icon"><img src="images/lx-icon5.png" alt="" srcset=""></p>
+              <div class="w100">入学申请</div>
+            </div>
+          </li>
+          <li class="flex flex-center right">
+            <img src="images/lx-rights.png" alt="" srcset="">
+          </li>
+          <li class="flex flex-center circle">
+            <div class="">
+              <p class="w100 icon"><img src="images/lx-icon6.png" alt="" srcset=""></p>
+              <div class="w100">获取录取<br>
+                &签证办理</div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--end 项目流程 -->
+
+  <!--star  footer -->
+  <footer class="footer">
+  </footer>
+  <!-- end footer -->
+
+</body>
+
+</html>

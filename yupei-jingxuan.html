@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="css/phone.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/main.js"></script>
+  <title>华美雅思</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+  </header>
+  <!--end  header -->
+
+  <!--star banner -->
+  <div class="ny-banner positionr">
+    <img src="images/banner-yupei.jpg" alt="" srcset="" class="w100">
+    <div class="positionb flex flex-center">
+      <div>
+        <p class="banner-line"></p>
+        <h2 class="banner-h2 fon32">留学语培精选</h2>
+        <p class="banner-txt fon18">最新活动/留学资讯与你分享</p>
+      </div>
+    </div>
+  </div>
+  <!--end  banner -->
+
+  <!--star k12培训 -->
+  <div class="padding30 bgf5">
+    <div class="max1200">
+      <div class="location-menu">
+        <ul class="text-center flex fon16">
+          <li class=""><a href=""  class="cur">活动回顾</a></li>
+          <li><a href="">活动安排</a></li>
+          <li><a href="">美国留学资讯</a></li>
+          <li><a href="">英国留学资讯</a></li>
+          <li><a href="">出国语言考培资讯</a></li>
+          <li><a href="">其他留学资讯</a></li>
+        </ul>
+      </div>
+      <!--star news list -->
+      <ul class="yupei-list row flex" id="newlist">
+       
+      </ul>
+      <script id="new_list_tpl"  type="text/html">
+        {{#  layui.each(d.list, function(index, item){ }}
+        <li class="">
+            <a href='yupei-jingxuan-detail' class="bgf">
+              <div class="yupei-img positionr">
+                <img src="images/yupei-img-bg.jpg" alt="" srcset="" class="w100">
+                <div class="positionb flex flex-center scale">
+                  <img src="images/yupei-img.jpg" alt="" srcset="" class="w100">
+                </div>
+              </div>
+              <div class="yupei-con">
+                <p class="fon18 nowarp">托福考试改革，你受益了吗？</p>
+                <div class="yupei-desc line3 ">
+                  2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？
+                </div>
+                <div class="color6">
+                  2019-8-11
+                </div>
+              </div>
+            </a>
+          </li>
+        {{#  }); }}
+      </script>
+      <script>
+          layui.use('laytpl', function () {
+            var laytpl = layui.laytpl;
+            var newslist = {
+              "list": [
+                {
+                  "id": "02",
+                  "time": "2019-8-11",
+                  "title": "托福考试改革，你受益了吗？",
+                  "desc": " 2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？",
+                  "img": "images/yupei-img.jpg"
+                }, {
+                  "id": "02",
+                  "time": "2019-8-11",
+                  "title": "托福考试改革，你受益了吗？",
+                  "desc": " 2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？",
+                  "img": "images/yupei-img.jpg"
+                }, {
+                  "id": "02",
+                  "time": "2019-8-11",
+                  "title": "托福考试改革，你受益了吗？",
+                  "desc": " 2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？",
+                  "img": "images/yupei-img.jpg"
+                }, {
+                  "id": "02",
+                  "time": "2019-8-11",
+                  "title": "托福考试改革，你受益了吗？",
+                  "desc": " 2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？",
+                  "img": "images/yupei-img.jpg"
+                }, {
+                  "id": "02",
+                  "time": "2019-8-11",
+                  "title": "托福考试改革，你受益了吗？",
+                  "desc": " 2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？",
+                  "img": "images/yupei-img.jpg"
+                }, {
+                  "id": "02",
+                  "time": "2019-8-11",
+                  "title": "托福考试改革，你受益了吗？",
+                  "desc": " 2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？",
+                  "img": "images/yupei-img.jpg"
+                }, {
+                  "id": "02",
+                  "time": "2019-8-11",
+                  "title": "托福考试改革，你受益了吗？",
+                  "desc": " 2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？",
+                  "img": "images/yupei-img.jpg"
+                }, {
+                  "id": "02",
+                  "time": "2019-8-11",
+                  "title": "托福考试改革，你受益了吗？",
+                  "desc": " 2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？",
+                  "img": "images/yupei-img.jpg"
+                }, {
+                  "id": "02",
+                  "time": "2019-8-11",
+                  "title": "托福考试改革，你受益了吗？",
+                  "desc": " 2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？",
+                  "img": "images/yupei-img.jpg"
+                }, {
+                  "id": "02",
+                  "time": "2019-8-11",
+                  "title": "托福考试改革，你受益了吗？",
+                  "desc": " 2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？",
+                  "img": "images/yupei-img.jpg"
+                }, {
+                  "id": "02",
+                  "time": "2019-8-11",
+                  "title": "托福考试改革，你受益了吗？",
+                  "desc": " 2018年即将过去，2019年秋季入学新的一波申请即将到来。各位有意向申请海外院校，升读硕士课程的同学们，规划好了未来的路了吗？",
+                  "img": "images/yupei-img.jpg"
+                },
+              ]
+            }
+            var new_tpl = new_list_tpl.innerHTML;
+            var view = document.getElementById('newlist');
+            laytpl(new_tpl).render(newslist, function (html) {
+              view.innerHTML = html;
+            });
+    
+          })
+        </script>
+      <!--end news list -->
+       <!-- page -->
+       <div class="page text-center">
+          <a href="" class="prev-next">Previous</a>
+          <a href="" class="cur">1</a>
+          <a href="">2</a>
+          <a href="">3</a>
+          <a href="">4</a>
+        
+          <a href="" class="prev-next">next</a>
+        </div>
+        <!-- end page -->
+
+    </div>
+  </div>
+  <!--end k12培训 -->
+
+
+  <!--star  footer -->
+  <footer class="footer">
+  </footer>
+  <!-- end footer -->
+
+</body>
+
+</html>

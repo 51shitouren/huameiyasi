@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="css/phone.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/main.js"></script>
+  <title>华美雅思</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+  </header>
+  <!--end  header -->
+
+  <!--star banner -->
+  <div class="ny-banner positionr">
+    <img src="images/banner-youxueying.jpg" alt="" srcset="" class="w100">
+    <div class="positionb flex flex-center">
+      <div>
+        <p class="banner-line"></p>
+        <h2 class="banner-h2 fon32">海外游学营</h2>
+        <p class="banner-txt fon18">游学 让孩子见识不凡</p>
+      </div>
+    </div>
+  </div>
+  <!--end  banner -->
+
+  <!--star 海外游学营 -->
+  <div class="padding30 bgf5">
+    <div class="max1200 min-height400">
+      <div class="top-desc">
+        <h2 class="fon20">华美海外游学营</h2>
+        <div class="lineh2 fon16 descp">
+          华美海外游学营，为华美留学旗下独立产品。海外游学营线路丰富，<br>
+          主题涵盖足球、英语学习和亲子营多个领域，时长为10天到半个月不等，目的地以美国和英国为主。<br>
+          华美海外游学营每年根据客户需求，定制不同类型的游学产品。2020年寒假的海外游学营即将推出，以下为往期华美海外游学营部分展示<br>
+        </div>
+      </div>
+      <!--star list -->
+      <ul class="youuxe-list" id="newlist">
+       
+      </ul>
+      <script id="new_list_tpl"  type="text/html">
+        {{#  layui.each(d.list, function(index, item){ }}
+        <li class="pad30 bgf flex">
+            <div class="w50 positionr">
+              <img src="images/yx-img-bg.jpg" alt="" srcset="" class="w100">
+              <div class="positionb">
+                <img src="{{item.img}}" alt="" srcset="" class="w100">
+              </div>
+            </div>
+            <div class="w50 yx-con flex">
+              <div class="lineh2">
+                <p class="fon22 color0">{{item.title}} </p>
+                <div class="color6">
+                  {{item.desc_html}}
+                </div>
+              </div>
+            </div>
+          </li>
+        {{#  }); }}
+      </script>
+      <script>
+        layui.use('laytpl', function () {
+          var laytpl = layui.laytpl;
+          var newslist = {
+            "list": [
+              {
+                "id": "02",
+                "title": "领略世界 迈向牛津",
+                "desc_html": "<p>15天牛津大学夏季课程，小班制牛津大学教学团队</p><p> 标准英式语言课程</p><p>牛津大学正统英式礼仪课</p> <p>牛津辩论项目及社会调研项目</p><p> 牛津大学入学课程</p><p> 颁发牛津大学夏季交流课程结业证书</p><p>寓学于游：探访剑桥大学，参观英超劲旅阿森纳足球俱乐部双语领队，牛津大学学生代表全程监护</p><p> 面向中学生</p>",
+                "img": "images/yx-img.jpg"
+              }, {
+                "id": "02",
+                "title": "领略世界 迈向牛津",
+                "desc_html": "<p>15天牛津大学夏季课程，小班制牛津大学教学团队</p><p> 标准英式语言课程</p><p>牛津大学正统英式礼仪课</p> <p>牛津辩论项目及社会调研项目</p><p> 牛津大学入学课程</p><p> 颁发牛津大学夏季交流课程结业证书</p><p>寓学于游：探访剑桥大学，参观英超劲旅阿森纳足球俱乐部双语领队，牛津大学学生代表全程监护</p><p> 面向中学生</p>",
+                "img": "images/yx-img.jpg"
+              }, {
+                "id": "02",
+                "title": "领略世界 迈向牛津",
+                "desc_html": "<p>15天牛津大学夏季课程，小班制牛津大学教学团队</p><p> 标准英式语言课程</p><p>牛津大学正统英式礼仪课</p> <p>牛津辩论项目及社会调研项目</p><p> 牛津大学入学课程</p><p> 颁发牛津大学夏季交流课程结业证书</p><p>寓学于游：探访剑桥大学，参观英超劲旅阿森纳足球俱乐部双语领队，牛津大学学生代表全程监护</p><p> 面向中学生</p>",
+                "img": "images/yx-img.jpg"
+              }, {
+                "id": "02",
+                "title": "领略世界 迈向牛津",
+                "desc_html": "<p>15天牛津大学夏季课程，小班制牛津大学教学团队</p><p> 标准英式语言课程</p><p>牛津大学正统英式礼仪课</p> <p>牛津辩论项目及社会调研项目</p><p> 牛津大学入学课程</p><p> 颁发牛津大学夏季交流课程结业证书</p><p>寓学于游：探访剑桥大学，参观英超劲旅阿森纳足球俱乐部双语领队，牛津大学学生代表全程监护</p><p> 面向中学生</p>",
+                "img": "images/yx-img.jpg"
+              }, {
+                "id": "02",
+                "title": "领略世界 迈向牛津",
+                "desc_html": "<p>15天牛津大学夏季课程，小班制牛津大学教学团队</p><p> 标准英式语言课程</p><p>牛津大学正统英式礼仪课</p> <p>牛津辩论项目及社会调研项目</p><p> 牛津大学入学课程</p><p> 颁发牛津大学夏季交流课程结业证书</p><p>寓学于游：探访剑桥大学，参观英超劲旅阿森纳足球俱乐部双语领队，牛津大学学生代表全程监护</p><p> 面向中学生</p>",
+                "img": "images/yx-img.jpg"
+              }
+            ]
+          }
+          var new_tpl = new_list_tpl.innerHTML;
+          var view = document.getElementById('newlist');
+          laytpl(new_tpl).render(newslist, function (html) {
+            view.innerHTML = html;
+          });
+  
+        })
+      </script>
+      <!--end list -->
+    </div>
+  </div>
+  <!--end 海外游学营 -->
+
+
+  <!--star  footer -->
+  <footer class="footer">
+  </footer>
+  <!-- end footer -->
+
+</body>
+
+</html>

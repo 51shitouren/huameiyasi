@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="css/phone.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/main.js"></script>
+  <title>华美雅思</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+  </header>
+  <!--end  header -->
+
+  <!--star banner -->
+  <div class="swiper-container banner positionr">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide text-center">
+        <!-- PC端banner  -->
+        <img src="images/index/banner.jpg" alt="" srcset="" class="hidden-xs w100">
+        <!-- 移动端banner -->
+        <img src="images/index/banner.jpg" alt="" srcset="" class="visible-xs w100">
+      </div>
+      <div class="swiper-slide text-center">
+        <!-- PC端banner  -->
+        <img src="images/index/banner2.jpg" alt="" srcset="" class="hidden-xs w100">
+        <!-- 移动端banner -->
+        <img src="images/index/banner2.jpg" alt="" srcset="" class="visible-xs w100">
+      </div>
+      <div class="swiper-slide text-center">
+        <!-- PC端banner  -->
+        <img src="images/index/banner.jpg" alt="" srcset="" class="hidden-xs w100">
+        <!-- 移动端banner -->
+        <img src="images/index/banner.jpg" alt="" srcset="" class="visible-xs w100">
+      </div>
+
+    </div>
+    <div class="swiper-pagination-banner swiper-pagination"></div>
+    <div class="banner-left  hidden-xs active">
+      <div class="positionb flex flex-center " id="banner_menu">
+        <div class="h100 ">
+          <div class="banner-nav-item">
+            <h3>华美留学产品</h3>
+            <ul class="banner-nav fon16">
+              <li><a href="">留学申请：高中丨本科丨硕士</a></li>
+              <li><a href="dilingliuxue.html">英国低龄留学</a></li>
+              <li><a href="gaoduan-liuxue.html">美国高端留学</a></li>
+              <li><a href="beijingtisheng.html">背景提升计划 </a></li>
+              <li><a href="youxueying.html">海外游学营</a></li>
+            </ul>
+          </div>
+          <div class="banner-nav-item">
+            <h3>华美语培产品</h3>
+            <ul class="banner-nav fon16">
+              <li><a href="k12-peixun.html">k12学科培训</a></li>
+              <li><a href="yupei-jingxuan.html">出国语言考培</a></li>
+              <li><a href="">夏令营</a></li>
+              <li><a href="">冬令营 </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="after" id="banner_after"></div>
+    </div>
+    <script>
+      $(function () {
+        var swiper_banner = new Swiper('.banner', {
+          autoplay: true,
+          loop: true,
+          effect: 'fade',
+          pagination: {
+            el: '.swiper-pagination-banner',
+            // type: 'fraction',
+            clickable: true
+          },
+        });
+
+        setTimeout(function () {
+          $('.banner-left').removeClass('active')
+        }, 2000);
+
+        $('#banner_after').click(function (e) {
+          e.preventDefault();
+          $('.banner-left').toggleClass('active')
+        });
+      })
+    </script>
+  </div>
+  <!-- end banner -->
+
+  <!--star  留学语培精选 -->
+  <div class="index-item2 bgf5 padding60">
+    <div class="max1200">
+      <h3 class="h3-title fon24">留学语培精选</h3>
+      <div class="flex item2-flex">
+        <div class="item2-left fon20  ">
+          <div class="positionr">
+            <img src="images/index/index-item-left-img.jpg" alt="" srcset="" class="w100">
+            <div class="positionb flex item2-left-title">
+              <span class="">活动回顾</span>
+            </div>
+          </div>
+          <ul class="item2-nav">
+            <li>
+              <a href="">活动安排</a>
+            </li>
+            <li>
+              <a href="">美国留学资讯</a>
+            </li>
+
+            <li>
+              <a href="">英国留学资讯</a>
+            </li>
+            <li>
+              <a href="">出国语言考培资讯</a>
+            </li>
+            <li>
+              <a href="">其他留学资讯</a>
+            </li>
+          </ul>
+        </div>
+        <div class="item2-right">
+          <div class="swiper-container item2-list">
+            <div class="swiper-wrapper" id="news">
+
+            </div>
+            <!-- Add Scrollbar -->
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </div>
+        <script type="text/html" id="new_list_tpl">
+          {{#  layui.each(d.list, function(index, item){ }}
+          <div class="swiper-slide">
+              <div class="list-img positionr">
+                <img src="images/index/index-item-img1-bg.jpg" alt="" srcset="" class="w100">
+                <div class="positionb">
+                  <img src="{{item.img}}" alt="" srcset="" class="w100">
+                </div>
+              </div>
+              <div class="padding15 bgf">
+                <p class="colororg date">{{item.date}}</p>
+                <p class="line2 fon16">{{item.title}}</p>
+                <p class="line3 desc">{{item.desc}}</p>
+              </div>
+            </div>
+            {{#  }); }}
+        </script>
+        <script>
+          layui.use('laytpl', function () {
+            var laytpl = layui.laytpl;
+            var newslist = {
+              "list": [
+                {
+                  "id": "02",
+                  "date": "2016.06.03",
+                  "title": "清华大学&斯坦福大学人工智能冬令营结营啦！",
+                  "desc": "从广州到清华大学;从清华大学到斯坦福大学;12小时飞行;跨越9984公里;抵达旧金山",
+                  "img": "images/index/index-item-img1.jpg"
+                }, {
+                  "id": "02",
+                  "date": "2016.06.03",
+                  "title": "清华大学&斯坦福大学人工智能冬令营结营啦！",
+                  "desc": "从广州到清华大学;从清华大学到斯坦福大学;12小时飞行;跨越9984公里;抵达旧金山",
+                  "img": "images/index/index-item-img1.jpg"
+                }, {
+                  "id": "02",
+                  "date": "2016.06.03",
+                  "title": "清华大学&斯坦福大学人工智能冬令营结营啦！",
+                  "desc": "从广州到清华大学;从清华大学到斯坦福大学;12小时飞行;跨越9984公里;抵达旧金山",
+                  "img": "images/index/index-item-img1.jpg"
+                }, {
+                  "id": "02",
+                  "date": "2016.06.03",
+                  "title": "清华大学&斯坦福大学人工智能冬令营结营啦！",
+                  "desc": "从广州到清华大学;从清华大学到斯坦福大学;12小时飞行;跨越9984公里;抵达旧金山",
+                  "img": "images/index/index-item-img1.jpg"
+                }, {
+                  "id": "02",
+                  "date": "2016.06.03",
+                  "title": "清华大学&斯坦福大学人工智能冬令营结营啦！",
+                  "desc": "从广州到清华大学;从清华大学到斯坦福大学;12小时飞行;跨越9984公里;抵达旧金山",
+                  "img": "images/index/index-item-img1.jpg"
+                }, {
+                  "id": "02",
+                  "date": "2016.06.03",
+                  "title": "清华大学&斯坦福大学人工智能冬令营结营啦！",
+                  "desc": "从广州到清华大学;从清华大学到斯坦福大学;12小时飞行;跨越9984公里;抵达旧金山",
+                  "img": "images/index/index-item-img1.jpg"
+                }
+              ]
+            }
+            var new_tpl = new_list_tpl.innerHTML;
+            var view = document.getElementById('news');
+            laytpl(new_tpl).render(newslist, function (html) {
+              view.innerHTML = html;
+              var swiper_news = new Swiper('.item2-list', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                scrollbar: {
+                  el: '.swiper-scrollbar',
+                  // hide: true,
+                },
+                breakpoints: {
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                  }
+                }
+              });
+            });
+
+          })
+
+        </script>
+      </div>
+    </div>
+  </div>
+  <!--end  留学语培精选 -->
+
+  <!--star 留学方案与评估 -->
+  <div class="index-case positionr">
+    <!-- <img src="images/index/index-item2-bg.jpg" alt="" srcset="" class="w100"> -->
+    <div class="position ">
+      <div class="max1200 flex case-main">
+        <div class="w50 case-form flex">
+          <div class="flex">
+            <div class="fon24 colororg case-tit">留学方案与评估:</div>
+            <form action="" class="flex fon16  flex-case-form">
+              <select class="case-txt after">
+                <option>意向国家/地区</option>
+              </select>
+              <select class="case-txt after">
+                <option>预计出国时间</option>
+              </select>
+              <select class="case-txt after">
+                <option>专业方向</option>
+              </select>
+              <input type="text" class="case-txt" placeholder="姓名" />
+              <input type="text" class="case-txt" placeholder="电话">
+              <input type="button" class="case-txt case-btn" value="立即获取方案" />
+            </form>
+
+          </div>
+        </div>
+        <div class="w50 case-img flex">
+          <div>
+            <img src="images/index/index-item2-img.png" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end  留学方案与评估 -->
+
+  <!--star 精彩活动 -->
+  <div class="bgf5 padding60">
+    <div class="max1200">
+      <h3 class="h3-title fon24">精彩活动</h3>
+      <div class="swiper-container item-list-activity">
+        <div class="swiper-wrapper" id="activity">
+
+        </div>
+        <div class="swiper-pagination-active"></div>
+      </div>
+      <script type="text/html" id="activity_list_tpl">
+        {{#  layui.each(d.list, function(index, item){ }}
+        <div class="swiper-slide bgf padding15 ">
+            <div class="list-img positionr">
+              <img src="images/index/index-item3-img-bg.jpg" alt="" srcset="" class="w100">
+              <div class="positionb">
+                <img src="{{item.img}}" alt="" srcset="" class="w100">
+              </div>
+            </div>
+            <div class="  ">
+              <p class="line2 fon16 title color3">{{item.title}}</p>
+              <p class="line3 desc fon14 color9">{{item.desc}}</p>
+            </div>
+          </div>
+          {{#  }); }}
+      </script>
+      <script>
+        layui.use('laytpl', function () {
+          var laytpl = layui.laytpl;
+          var activity = {
+            "list": [
+              {
+                "id": "02",
+                "title": "最强阵容世界名校团！ 2018华美国际教育展盛大揭幕",
+                "desc": "数百所顶尖名校大学招生官莅临羊城华美国际中学邀请多伦多大学、加州大学欧文分校等...",
+                "img": "images/index/index-item3-img.jpg"
+              }, {
+                "id": "02",
+                "title": "最强阵容世界名校团！ 2018华美国际教育展盛大揭幕",
+                "desc": "数百所顶尖名校大学招生官莅临羊城华美国际中学邀请多伦多大学、加州大学欧文分校等...",
+                "img": "images/index/index-item3-img.jpg"
+              }, {
+                "id": "02",
+                "title": "最强阵容世界名校团！ 2018华美国际教育展盛大揭幕",
+                "desc": "数百所顶尖名校大学招生官莅临羊城华美国际中学邀请多伦多大学、加州大学欧文分校等...",
+                "img": "images/index/index-item3-img.jpg"
+              }, {
+                "id": "02",
+                "title": "最强阵容世界名校团！ 2018华美国际教育展盛大揭幕",
+                "desc": "数百所顶尖名校大学招生官莅临羊城华美国际中学邀请多伦多大学、加州大学欧文分校等...",
+                "img": "images/index/index-item3-img.jpg"
+              }, {
+                "id": "02",
+                "title": "最强阵容世界名校团！ 2018华美国际教育展盛大揭幕",
+                "desc": "数百所顶尖名校大学招生官莅临羊城华美国际中学邀请多伦多大学、加州大学欧文分校等...",
+                "img": "images/index/index-item3-img.jpg"
+              }, {
+                "id": "02",
+                "title": "最强阵容世界名校团！ 2018华美国际教育展盛大揭幕",
+                "desc": "数百所顶尖名校大学招生官莅临羊城华美国际中学邀请多伦多大学、加州大学欧文分校等...",
+                "img": "images/index/index-item3-img.jpg"
+              }
+            ]
+          }
+          var act_tpl = activity_list_tpl.innerHTML;
+          var act_view = document.getElementById('activity');
+          laytpl(act_tpl).render(activity, function (html) {
+            act_view.innerHTML = html;
+            var swiper_act = new Swiper('.item-list-activity', {
+              slidesPerView: 4,
+              spaceBetween: 30,
+
+              breakpoints: {
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 15,
+                }
+              },
+              pagination: {
+                el: '.swiper-pagination-active',
+                // type: 'fraction',
+                clickable: true
+              },
+            });
+          });
+
+        })
+
+      </script>
+    </div>
+  </div>
+  <!--end 精彩活动 -->
+
+  <!--star 精英团队 -->
+  <div class="team bgf padding60">
+    <div class="max1200">
+      <h3 class="h3-title fon24">精英团队</h3>
+      <div class="max630 text-center">
+        <p class=" text-left"><img src="images/index/left-yh.png" alt="" srcset="" class="max30"></p>
+        <h3 class="fon24 color0 lineh2" id="team_name">Jaqueline</h3>
+        <div class="fon14 color6 lineh2" id="team_desc">
+          <p>英语翻译硕士，启德留学美国部资深顾问，启德美国之星。</p>
+          <p>多年留学从业经验。对文书写作有一定研究，且善于帮助学生做有针对性的个性化规划服务，</p>
+          <p>善于深层次挖掘学生亮点，的 做事认真、有耐心，亦师亦友。</p>
+        </div>
+        <p class="text-right"><img src="images/index/right-yh.png" alt="" srcset="" class="max30"></p>
+      </div>
+      <div class="swiper-container item-list-team">
+        <div class="swiper-wrapper" id="team">
+
+        </div>
+      </div>
+
+      <p class="text-center fon14"><a href="" class="more">Learn more</a></p>
+      <script type="text/html" id="team_list_tpl">
+            {{#  layui.each(d.list, function(index, item){ }}
+            <div class="swiper-slide " >
+                <div class="list-img positionr">
+                  <img src="images/index/item4-img.jpg" alt="" srcset=""   class='w100 visible-hidden'>
+                  <div class="positionb scale">
+                      <img src="{{item.img}}" alt="" srcset=""   class='w100'>
+                    </div>
+                </div>
+            </div>
+              {{#  }); }}
+      </script>
+      <script>
+        layui.use('laytpl', function () {
+          var laytpl = layui.laytpl;
+          var team = {
+            "list": [
+              {
+                "id": "02",
+                "name": "Jaqueline",
+                "desc_html": "<p>333英语翻译硕士，启德留学美国部资深顾问，启德美国之星。</p><p>多年留学从业经验。对文书写作有一定研究，且善于帮助学生做有针对性的个性化规划服务，</p><p>善于深层次挖掘学生亮点，的 做事认真、有耐心，亦师亦友。</p>",
+                "img": "images/index/item4-img.jpg"
+              },
+              {
+                "id": "02",
+                "name": "2222Jaqueline1",
+                "desc_html": "<p>555英语翻译硕士，启德留学美国部资深顾问，启德美国之星。</p><p>多年留学从业经验。对文书写作有一定研究，且善于帮助学生做有针对性的个性化规划服务，</p><p>善于深层次挖掘学生亮点，的 做事认真、有耐心，亦师亦友。</p>",
+                "img": "images/index/item4-img.jpg"
+              },
+              {
+                "id": "02",
+                "name": "Jaqueline2",
+                "desc_html": "<p>英语翻译硕士，启德留学美国部资深顾问，启德美国之星。</p><p>多年留学从业经验。对文书写作有一定研究，且善于帮助学生做有针对性的个性化规划服务，</p><p>善于深层次挖掘学生亮点，的 做事认真、有耐心，亦师亦友。</p>",
+                "img": "images/index/item4-img.jpg"
+              }, {
+                "id": "02",
+                "name": "Jaqueline",
+                "desc_html": "<p>英语翻译硕士，启德留学美国部资深顾问，启德美国之星。</p><p>多年留学从业经验。对文书写作有一定研究，且善于帮助学生做有针对性的个性化规划服务，</p><p>善于深层次挖掘学生亮点，的 做事认真、有耐心，亦师亦友。</p>",
+                "img": "images/index/item4-img.jpg"
+              },
+              {
+                "id": "02",
+                "name": "Jaqueline1",
+                "desc_html": "<p>英语翻译硕士，启德留学美国部资深顾问，启德美国之星。</p><p>多年留学从业经验。对文书写作有一定研究，且善于帮助学生做有针对性的个性化规划服务，</p><p>善于深层次挖掘学生亮点，的 做事认真、有耐心，亦师亦友。</p>",
+                "img": "images/index/item4-img.jpg"
+              },
+              {
+                "id": "02",
+                "name": "Jaqueline2",
+                "desc_html": "<p>英语翻译硕士，启德留学美国部资深顾问，启德美国之星。</p><p>多年留学从业经验。对文书写作有一定研究，且善于帮助学生做有针对性的个性化规划服务，</p><p>善于深层次挖掘学生亮点，的 做事认真、有耐心，亦师亦友。</p>",
+                "img": "images/index/item4-img.jpg"
+              },
+              {
+                "id": "02",
+                "name": "Jaqueline2",
+                "desc_html": "<p>英语翻译硕士，启德留学美国部资深顾问，启德美国之星。</p><p>多年留学从业经验。对文书写作有一定研究，且善于帮助学生做有针对性的个性化规划服务，</p><p>善于深层次挖掘学生亮点，的 做事认真、有耐心，亦师亦友。</p>",
+                "img": "images/index/item4-img.jpg"
+              }
+            ]
+          }
+          var team_tpl = team_list_tpl.innerHTML;
+          var team_view = document.getElementById('team');
+          laytpl(team_tpl).render(team, function (html) {
+            team_view.innerHTML = html;
+            var swiper = new Swiper('.item-list-team', {
+              initialSlide: 3,
+              slidesPerView: 7,
+              spaceBetween: 70,
+              centeredSlides: true,
+              breakpoints: {
+                1024: {
+                  slidesPerView: 5,
+                  spaceBetween: 10,
+                },
+                640: {
+                  slidesPerView: 3,
+                  spaceBetween: 10,
+                }
+              },
+            });
+
+            $('#team .swiper-slide').hover(function (e) {
+              e.preventDefault();
+              var index = $(this).index();
+              console.log(index)
+              swiper.slideTo(index, 1000, false);//切换到第一个slide，速度为1秒
+              $('#team_name').text(team.list[index].name)
+              $('#team_desc').html(team.list[index].desc_html)
+
+            });
+
+          });
+
+        })
+
+      </script>
+
+    </div>
+  </div>
+  <!--end 精英团队 -->
+
+
+  <!--star  footer -->
+  <footer class="footer">
+  </footer>
+  <!-- end footer -->
+
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="css/phone.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/main.js"></script>
+  <title>华美雅思</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+  </header>
+  <!--end  header -->
+
+  <!--star banner -->
+  <div class="ny-banner positionr">
+    <img src="images/case-banner.jpg" alt="" srcset="" class="w100">
+    <div class="positionb flex flex-center">
+      <div>
+        <p class="banner-line"></p>
+        <h2 class="banner-h2 fon32">成功案例</h2>
+        <p class="banner-txt fon18">每一份成功都是我们的动力</p>
+      </div>
+    </div>
+  </div>
+  <!--end  banner -->
+
+  <!--star case-list -->
+  <div class="padding30 bgf5">
+    <div class="max1200 ">
+      <div class="select-box flex">
+        <select class="select-item">
+          <option value="">申请国家</option>
+        </select>
+        <select class="select-item">
+          <option value="">申请项目</option>
+        </select>
+      </div>
+      <!--star  list -->
+      <ul class="case-list flex row" id="caselist">
+
+      </ul>
+      <!-- page -->
+      <div class="page text-center">
+        <a href="" class="prev-next">Previous</a>
+        <a href="" class="cur">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+
+        <a href="" class="prev-next">next</a>
+      </div>
+      <!-- end page -->
+      <script id="case_list_tpl" type="text/html">
+        {{#  layui.each(d.list, function(index, item){ }}
+        <li>
+            <div class="padding15 bgf flex">
+             <div class='w100'>
+                <p class="fon16 title nowarp ">{{item.casename}}</p>
+              <p class="fon14 school nowarp">{{item.school}}</p>
+             </div>
+              <div class="case-desc color6 lineh2 w100">
+               {{item.desc}}
+              </div>
+              <div class="case-btns w100">
+                <a href="">查看案例</a>
+                <a href="">在线咨询</a>
+              </div>
+            </div>
+          </li>
+        {{#  }); }}
+      </script>
+      <script>
+        layui.use('laytpl', function () {
+          var laytpl = layui.laytpl;
+          var caselist = {
+            "list": [
+              {
+                "id": "01",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p>GPA：3.59/4  </p><p>专业：数学与应用数学</p><p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }, {
+                "id": "02",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }, {
+                "id": "02",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }, {
+                "id": "02",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }, {
+                "id": "01",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }, {
+                "id": "02",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }, {
+                "id": "02",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }, {
+                "id": "02",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }, {
+                "id": "01",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }, {
+                "id": "02",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }, {
+                "id": "02",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }, {
+                "id": "02",
+                "casename": "Case 1：钟同学",
+                "school": "本科学校：广东外语外贸大学",
+                "desc": "<p> GRE/GMAT: GRE 320  </p><p> IELTS/TOEFL: 98 </p><p> 留学院校：纽约大学</p> <p> 留学专业：金融工程</p>"
+              }
+            ]
+          }
+          var case_tpl = case_list_tpl.innerHTML;
+          var view = document.getElementById('caselist');
+          laytpl(case_tpl).render(caselist, function (html) {
+            view.innerHTML = html;
+          });
+
+        })
+      </script>
+      <!--end  list -->
+    </div>
+  </div>
+  <!--end case-list -->
+
+
+  <!--star  footer -->
+  <footer class="footer">
+  </footer>
+  <!-- end footer -->
+
+</body>
+
+</html>
