@@ -370,6 +370,10 @@ header {
   transform: translateX(-4px);
 }
 
+.vh100 {
+  height: calc(100vh - 100px);
+}
+
 .h100 {
   height: 100%;
   display: flex;
@@ -1600,6 +1604,19 @@ select.case-txt {
   background-size: cover;
 }
 
+.item-list-linian .swiper-slide .list-img {
+  overflow: hidden;
+}
+
+.item-list-linian .swiper-slide:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.item-list-linian .swiper-slide:hover .scale {
+  transform: scale(1.1);
+}
+
 .list-lx {
   justify-content: space-between;
   padding-top: 30px;
@@ -1714,8 +1731,12 @@ select.case-txt {
   margin-bottom: 5px;
 }
 
-.lx-items li.circle:hover {
+.lx-items li.circle:hover, .lx-items li.circle.cur {
   background: #343434;
+}
+
+.lx-items li:last-child {
+  display: none;
 }
 
 .sw-item {

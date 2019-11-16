@@ -315,6 +315,7 @@ header {
     transform: translateX(-4px);
   }
 }
+.vh100{ height: calc(100vh - 100px);}
 .h100{ height: 100%; display: flex; align-content: space-around; flex-wrap: wrap;  padding: 0 30px;}
 .banner-left {
   transition: .5s linear all;
@@ -1341,6 +1342,14 @@ select.case-txt{
   background: url(../images/hexin-linian.jpg) no-repeat center;
   background-size: cover;
 }
+.item-list-linian{
+  // .swiper-slide:hover{ background: $colororg1;}
+  // .swiper-slide:hover .title{ color: $colorf;}
+  // .swiper-slide:hover .desc{ color: $colorf;}
+  .swiper-slide .list-img{ overflow: hidden;}
+  .swiper-slide:hover{ transform: translateY(-3px); box-shadow: 0 0 5px rgba($color: #fff, $alpha: 0.2);}
+  .swiper-slide:hover .scale{ transform: scale(1.1);}
+}
 
 .list-lx {
   justify-content: space-between;
@@ -1442,10 +1451,12 @@ select.case-txt{
   .icon {
     margin-bottom: 5px;
   }
-  li.circle:hover {
+  li.circle:hover,li.circle.cur {
     background: #343434;
   }
+  li:last-child{ display: none;}
 }
+
 .sw-item {
   position: absolute;
   width: 330px;

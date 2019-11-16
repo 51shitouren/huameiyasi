@@ -71,23 +71,23 @@
         <p class="fon18 uppercase"> Core Concepts</p>
       </div>
       <!--star list -->
-      <div class="swiper-container item-list-activity ">
-        <div class="swiper-wrapper list-lx" id="activity">
+      <div class="swiper-container item-list-linian ">
+        <div class="swiper-wrapper list-lx" id="linian">
 
         </div>
         <div class="swiper-pagination-active"></div>
       </div>
-      <script type="text/html" id="activity_list_tpl">
+      <script type="text/html" id="linian_list_tpl">
           {{#  layui.each(d.list, function(index, item){ }}
-          <div class="swiper-slide bgf ">
+          <div class="swiper-slide bgf trans ">
               <div class="list-img positionr">
                 <img src="images/hexin-img-bg.jpg" alt="" srcset="" class="w100">
-                <div class="positionb">
+                <div class="positionb scale trans">
                   <img src="{{item.img}}" alt="" srcset="" class="w100">
                 </div>
               </div>
-              <div class=" bgf liuxue-box w100">
-                <p class=" fon18 title nowarp"  style='background:url({{item.icon}}) no-repeat left center ; padding-left:25px'>
+              <div class=" liuxue-box w100">
+                <p class=" fon18 title nowarp"  style='background:url({{item.icon}}) no-repeat left center ; padding-left:30px'>
                   {{item.title}}
                 </p>
                 <p class="line3 desc fon14 color9">{{item.desc}}</p>
@@ -98,7 +98,7 @@
       <script>
         layui.use('laytpl', function () {
           var laytpl = layui.laytpl;
-          var activity = {
+          var linian = {
             "list": [
               {
                 "id": "02",
@@ -127,9 +127,9 @@
               }
             ]
           }
-          var act_tpl = activity_list_tpl.innerHTML;
-          var act_view = document.getElementById('activity');
-          laytpl(act_tpl).render(activity, function (html) {
+          var act_tpl = linian_list_tpl.innerHTML;
+          var act_view = document.getElementById('linian');
+          laytpl(act_tpl).render(linian, function (html) {
             act_view.innerHTML = html;
 
           });
@@ -213,7 +213,7 @@
         var name = $(this).attr('data-name');
         var desc = $(this).attr('data-desc');
         var largeImg = $(this).attr('data-largeImg')
-        $('#team_img').attr('src',largeImg)
+        $('#team_img').attr('src', largeImg)
         $('#item_name').text(name)
         $('#team_desc').html(desc)
 
@@ -324,75 +324,90 @@
       </div>
       <div class="text-center max660">
         <p class="text-left yh-72"> “ </p>
-        <p class="fon20 colororg"> 华美留学咨询</p>
-        <p class="fon16"> 留学对学生、家庭来说，都是一项重要投资
+        <p class="fon20 colororg" id="lx_title"> 华美留学咨询</p>
+        <div class="fon16" id="lx_desc"> 留学对学生、家庭来说，都是一项重要投资
           所以行动越早占有先机。
           无论是从学校信息的获取、奖学金申请，背景提升，夏校申请还是见证的准备时间等，
           建议学生至少提前3年准备,并在准备期间与顾问老师不间断进行联系。
-          除了获得最新的申请信息。同时按照科学的申请规划准备，从自身的软硬件和心理上不断提升自己。</p>
+          除了获得最新的申请信息。同时按照科学的申请规划准备，从自身的软硬件和心理上不断提升自己。</div>
         <p class="text-right yh-72"> ” </p>
       </div>
       <div class="lx-items padding30 text-center">
-        <ul class="flex ">
-          <li class="flex flex-center circle">
-            <div class="">
-              <p class="w100 icon"><img src="images/lx-icon1.png" alt="" srcset=""></p>
-              <div class="w100">华美留学<br>
-                咨询</div>
-            </div>
-          </li>
-          <li class="flex flex-center  right">
-            <img src="images/lx-rights.png" alt="" srcset="">
-          </li>
-          <li class="flex flex-center circle">
-            <div class="">
-              <p class="w100 icon"><img src="images/lx-icon2.png" alt="" srcset=""></p>
-              <div class="w100">参加华美+<br>
-                项目组建专业<br>
-                申请团队</div>
-            </div>
-          </li>
-          <li class="flex flex-center right ">
-            <img src="images/lx-rights.png" alt="" srcset="">
-          </li>
-          <li class="flex flex-center circle">
-            <div class="">
-              <p class="w100 icon"><img src="images/lx-icon3.png" alt="" srcset=""></p>
-              <div class="w100">确定留学<br>
-                方向</div>
-            </div>
-          </li>
-          <li class="flex flex-center right">
-            <img src="images/lx-rights.png" alt="" srcset="">
-          </li>
-          <li class="flex flex-center circle">
-            <div class="">
-              <p class="w100 icon"><img src="images/lx-icon4.png" alt="" srcset=""></p>
-              <div class="w100">沟通申请<br>
-                学院&专业</div>
-            </div>
-          </li>
-          <li class="flex flex-center right">
-            <img src="images/lx-rights.png" alt="" srcset="">
-          </li>
-          <li class="flex flex-center circle">
-            <div class="">
-              <p class="w100 icon"><img src="images/lx-icon5.png" alt="" srcset=""></p>
-              <div class="w100">入学申请</div>
-            </div>
-          </li>
-          <li class="flex flex-center right">
-            <img src="images/lx-rights.png" alt="" srcset="">
-          </li>
-          <li class="flex flex-center circle">
-            <div class="">
-              <p class="w100 icon"><img src="images/lx-icon6.png" alt="" srcset=""></p>
-              <div class="w100">获取录取<br>
-                &签证办理</div>
-            </div>
-          </li>
-
+        <ul class="flex " id="lx-list">
         </ul>
+        <script id="lc_list_tpl" type="text/html">
+          {{#  layui.each(d.list, function(index, item){ }}
+              <li class="flex flex-center circle" data-desc='{{item.desc}}' data-title='{{item.title}}'>
+                <div class="">
+                  <p class="w100 icon"><img src="{{item.img}}" alt="" srcset=""></p>
+                  <div class="w100">{{item.title_html}}</div>
+                </div>
+              </li>
+              <li class="flex flex-center  right">
+                <img src="images/lx-rights.png" alt="" srcset="">
+              </li>
+          {{#  }); }}
+        </script>
+        <script>
+          layui.use('laytpl', function () {
+            var laytpl = layui.laytpl;
+            var lx_list = {
+              "list": [
+                {
+                  "id": "02",
+                  "title": "华美留学咨询",
+                  "desc": "1留学对学生、家庭来说，都是一项重要投资 所以行动越早占有先机。 无论是从学校信息的获取、奖学金申请，背景提升，夏校申请还是见证的准备时间等， 建议学生至少提前3年准备,并在准备期间与顾问老师不间断进行联系。除了获得最新的申请信息。同时按照科学的申请规划准备，从自身的软硬件和心理上不断提升自己。",
+                  "title_html": "华美留学<br>咨询",
+                  "img": "images/lx-icon1.png"
+                }, {
+                  "id": "02",
+                  "title": "参加华美+",
+                  "desc": "2留学对学生、家庭来说，都是一项重要投资 所以行动越早占有先机。 无论是从学校信息的获取、奖学金申请，背景提升，夏校申请还是见证的准备时间等， 建议学生至少提前3年准备,并在准备期间与顾问老师不间断进行联系。除了获得最新的申请信息。同时按照科学的申请规划准备，从自身的软硬件和心理上不断提升自己。",
+                  "title_html": "参加华美+",
+                  "img": "images/lx-icon2.png"
+                }, {
+                  "id": "02",
+                  "title": "确定留学方向",
+                  "desc": "3留学对学生、家庭来说，都是一项重要投资 所以行动越早占有先机。 无论是从学校信息的获取、奖学金申请，背景提升，夏校申请还是见证的准备时间等， 建议学生至少提前3年准备,并在准备期间与顾问老师不间断进行联系。除了获得最新的申请信息。同时按照科学的申请规划准备，从自身的软硬件和心理上不断提升自己。",
+                  "title_html": "确定留学<br>方向",
+                  "img": "images/lx-icon3.png"
+                }, {
+                  "id": "02",
+                  "title": "华美留学咨询",
+                  "desc": "4留学对学生、家庭来说，都是一项重要投资 所以行动越早占有先机。 无论是从学校信息的获取、奖学金申请，背景提升，夏校申请还是见证的准备时间等， 建议学生至少提前3年准备,并在准备期间与顾问老师不间断进行联系。除了获得最新的申请信息。同时按照科学的申请规划准备，从自身的软硬件和心理上不断提升自己。",
+                  "title_html": "华美留学<br>咨询",
+                  "img": "images/lx-icon4.png"
+                }, {
+                  "id": "02",
+                  "title": "5华美留学咨询",
+                  "desc": "6留学对学生、家庭来说，都是一项重要投资 所以行动越早占有先机。 无论是从学校信息的获取、奖学金申请，背景提升，夏校申请还是见证的准备时间等， 建议学生至少提前3年准备,并在准备期间与顾问老师不间断进行联系。除了获得最新的申请信息。同时按照科学的申请规划准备，从自身的软硬件和心理上不断提升自己。",
+                  "title_html": "华美留学<br>咨询",
+                  "img": "images/lx-icon5.png"
+                }, {
+                  "id": "02",
+                  "title": "7华美留学咨询",
+                  "desc": "7留学对学生、家庭来说，都是一项重要投资 所以行动越早占有先机。 无论是从学校信息的获取、奖学金申请，背景提升，夏校申请还是见证的准备时间等， 建议学生至少提前3年准备,并在准备期间与顾问老师不间断进行联系。除了获得最新的申请信息。同时按照科学的申请规划准备，从自身的软硬件和心理上不断提升自己。",
+                  "title_html": "华美留学<br>咨询",
+                  "img": "images/lx-icon6.png"
+                }
+              ]
+            }
+            var lx_tpl = lc_list_tpl.innerHTML;
+            var view_lc = document.getElementById('lx-list');
+            laytpl(lx_tpl).render(lx_list, function (html) {
+              view_lc.innerHTML = html;
+              $('#lx-list li').click(function (e) {
+                e.preventDefault();
+                $('#lx-list li').removeClass('cur')
+                $(this).addClass('cur')
+                $('#lx_title').text($(this).attr('data-title'))
+                $('#lx_desc').text($(this).attr('data-desc'))
+
+              });
+            });
+
+          })
+        </script>
       </div>
     </div>
   </div>

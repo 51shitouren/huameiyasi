@@ -23,25 +23,31 @@
   <!--end  header -->
 
   <!--star banner -->
-  <div class="swiper-container banner positionr">
+  <div class="swiper-container banner positionr index-banner">
     <div class="swiper-wrapper">
       <div class="swiper-slide text-center">
         <!-- PC端banner  -->
-        <img src="images/index/banner.jpg" alt="" srcset="" class="hidden-xs w100">
-        <!-- 移动端banner -->
-        <img src="images/index/banner.jpg" alt="" srcset="" class="visible-xs w100">
+        <div class="hidden-xs w100 vh100" style="background:url(images/index/banner.jpg) no-repeat center top; background-size: cover;">
+        </div>
+         <!-- 移动端banner -->
+        <div class="visible-xs w100 vh100" style="background:url(images/index/banner.jpg) no-repeat center top; background-size: cover;">
+        </div>
       </div>
       <div class="swiper-slide text-center">
         <!-- PC端banner  -->
-        <img src="images/index/banner2.jpg" alt="" srcset="" class="hidden-xs w100">
-        <!-- 移动端banner -->
-        <img src="images/index/banner2.jpg" alt="" srcset="" class="visible-xs w100">
+        <div class="hidden-xs w100 vh100" style="background:url(images/index/banner2.jpg) no-repeat center top; background-size: cover;">
+        </div>
+         <!-- 移动端banner -->
+        <div class="visible-xs w100 vh100" style="background:url(images/index/banner2.jpg) no-repeat center top; background-size: cover;">
+        </div>
       </div>
       <div class="swiper-slide text-center">
         <!-- PC端banner  -->
-        <img src="images/index/banner.jpg" alt="" srcset="" class="hidden-xs w100">
-        <!-- 移动端banner -->
-        <img src="images/index/banner.jpg" alt="" srcset="" class="visible-xs w100">
+        <div class="hidden-xs w100 vh100" style="background:url(images/index/banner.jpg) no-repeat center top; background-size: cover;">
+        </div>
+         <!-- 移动端banner -->
+        <div class="visible-xs w100 vh100" style="background:url(images/index/banner.jpg) no-repeat center top; background-size: cover;">
+        </div>
       </div>
 
     </div>
@@ -445,6 +451,7 @@
               slidesPerView: 7,
               spaceBetween: 70,
               centeredSlides: true,
+              loop:true,
               breakpoints: {
                 1024: {
                   slidesPerView: 5,
@@ -457,7 +464,7 @@
               },
             });
 
-            $('#team .swiper-slide').hover(function (e) {
+            $('#team .swiper-slide').click(function (e) {
               e.preventDefault();
               var index = $(this).index();
               console.log(index)
